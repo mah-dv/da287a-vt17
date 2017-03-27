@@ -17,7 +17,7 @@ Inför denna labb ska ni ha **installerat PHP, apache och mysql**. Detta kan ni 
 Johans image är rekommenderad då han kommer att supporta detta, då det innebär att alla har samma miljö. Dessutom kommer det krävas senare i kursen, gällande testning & deployment.
 
 ## 1. Om PHP
-I denna del ska vi introduceras till språket PHP. Vi kommer titta på hur man kommer igång, samt skriver ett litet program i PHP.
+I denna del ska vi introduceras till språket PHP. Vi kommer titta på hur man kommer igång, samt skriver ett litet program i PHP. Avslutningsvis ska vi även se hur vi hanterar formulärsdata (alt. HTTP-anrop).
 
 ### 1.1. CLI - Första exempel
 Här ska vi bygga ett litet program som välkomnar användaren, och komplementerar användarens namn. För att köra en PHP-fil i CLI så skriver man följande:
@@ -72,3 +72,24 @@ När ni svarat på dessa frågor har ni kött på benen att bygga en svarssida, 
 ![Svarssida](response.png)
 
  Vad händer om ni byter metod till *post* i formuläret? Vad blir skillnaden? Hur hanterar ni detta på er svarssida?
+
+ ##### Tips
+ *Tips 1* Tänk på att för att ni ska kunna köra PHP-filer så behöver ni köra filerna via en webbserver som har stöd för PHP. PHP har en sådan webbserver inbyggd som ni startar genom:
+
+ ```
+ php -S localhost:8000
+ ```
+
+ Detta kommer att starta en webbserver som lyssnar på port 8000. *Obs*, det är viktigt att ni startar denna server i samma mapp som ni arbetar i, så att ni kan surfa till era filer.
+
+ *Tips 2* För att ta emot data som skickas med HTTP-metoden GET så använder man följande i PHP `$_GET['key']`, där _key_ är den nyckel som håller informationen man vill plocka ut. Ex.
+
+ URL: `localhost:8000/index.php?name=Anton`
+
+ För att plocka ut värdet `Anton` och spara i variabeln `$name` så skriver vi i PHP:
+
+```php
+$name = $_GET['Anton']
+```
+
+Om vi istället skickar data med HTTP-metoder POST, så använder vi `$_POST['key']`.
