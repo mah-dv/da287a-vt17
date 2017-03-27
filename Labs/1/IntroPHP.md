@@ -68,5 +68,7 @@ För att fånga upp dessa parametrarna i PHP så använder man sig utan variabel
  - Var skickas formulärsdata när formuläret skickas iväg?
 
 När ni svarat på dessa frågor har ni kött på benen att bygga en svarssida, som ska presentera det som skickas iväg med formuläret. Skapa en sida som ser ut som denna:
+
 ![Svarssida](response.png)
+
  Vad händer om ni byter metod till *post* i formuläret? Vad blir skillnaden? Hur hanterar ni detta på er svarssida?
