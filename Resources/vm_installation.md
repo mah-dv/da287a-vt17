@@ -19,11 +19,11 @@ Installationsanvisningar och nedladdningar finns hos [https://www.virtualbox.org
 
 ## Uppstart av den virtuella maskinen
 
-När du laddat ner den virtuella maskinen och installerat VirtualBox måste du importera den virtuella maskinen. Gör det genom att gå till *Arkiv*-menyn och sedan välja *Importera appliance*. Välj sedan filen som du laddat ner och följ guiden. När du är klar, markera den virtuella maskinen och klicka på *Starta*.
+När du laddat ner den virtuella maskinen och installerat VirtualBox måste du importera den virtuella maskinen. Gör det genom att gå till *Arkiv*-menyn och sedan välja *Importera appliance*. Välj sedan filen som du laddat ner och följ guiden. När du är klar, markera den virtuella maskinen och klicka på *Starta*. Du loggas in automatiskt. Om du är inaktiv, kan den virtuella maskinen låsas och du behöver ange ett lösenord för att få åtkomst till maskinen igen. Det lösenordet är *student*.
 
-### 
+### Eventuellt problem med VT-x/AMD-V under Windows
 
-http://druss.co/2015/06/fix-vt-x-is-not-available-verr_vmx_no_vmx-in-virtualbox/
+Om du kör Windows, kan du stöta på ett problem med VT-x/AMD-V när du startar den virtuella maskinen. Om du gör det, följ [den här guiden](http://druss.co/2015/06/fix-vt-x-is-not-available-verr_vmx_no_vmx-in-virtualbox/) för att åtgärda problemet.
 
 ## Installation av verktygen
 
