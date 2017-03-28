@@ -6,3 +6,6 @@ På denna sida kan ni hitta information som är kopplat till kursen DA287A - Web
 
 ## Laborationer
 - [Laboration 1a](/Labs/1/IntroPHP.md)
+
+## Resurser
+- [Installation av kurserns verktyg](/Resources/vm_installation.md)
