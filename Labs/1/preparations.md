@@ -17,6 +17,14 @@ Hämta installationsfilen på [http://download.virtualbox.org/virtualbox/5.1.18/
 ### Linux
 Installationsanvisningar och nedladdningar finns hos [https://www.virtualbox.org/wiki/Linux_Downloads](https://www.virtualbox.org/wiki/Linux_Downloads).
 
+## Uppstart av den virtuella maskinen
+
+När du laddat ner den virtuella maskinen och installerat VirtualBox måste du importera den virtuella maskinen. Gör det genom att gå till *Arkiv*-menyn och sedan välja *Importera appliance*. Välj sedan filen som du laddat ner och följ guiden. När du är klar, markera den virtuella maskinen och klicka på *Starta*.
+
+### 
+
+http://druss.co/2015/06/fix-vt-x-is-not-available-verr_vmx_no_vmx-in-virtualbox/
+
 ## Installation av verktygen
 
 Samtliga verktyg installeras genom terminalen (*Systemverktyg* -> *MATE-terminal*). Terminalen är ett text-baserat gränssnitt, vilket gör att kommandon kan kopieras rakt in i terminalen.
