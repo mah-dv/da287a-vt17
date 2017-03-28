@@ -11,7 +11,7 @@ I den första laborationen ska vi introduceras till php, dels genom CLI (command
 
 ## Förberedelser
 Inför denna labb ska ni ha **installerat PHP, Apache och MySQL**. Detta kan ni antingen göra genom:
-1. [Johans image](../../Resources/vm_installation.md) för [VirtualBox](https://www.virtualbox.org/) (rekommenderat).
+1. [Johans image](/Resources/vm_installation.md) för [VirtualBox](https://www.virtualbox.org/) (rekommenderat).
 2. Genom [Xampp](https://www.apachefriends.org/index.html) för Windows/Mac OS X.
 
 Johans image är rekommenderad då han kommer att supporta detta, då det innebär att alla har samma miljö. Dessutom kommer det krävas senare i kursen, gällande testning & deployment.
