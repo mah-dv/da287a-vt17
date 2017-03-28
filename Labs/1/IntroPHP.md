@@ -10,8 +10,8 @@ I den första laborationen ska vi introduceras till php, dels genom CLI (command
     3. Skriv ett mindre program m.h.a. composer
 
 ## Förberedelser
-Inför denna labb ska ni ha **installerat PHP, apache och mysql**. Detta kan ni antingen göra genom:
-1. [Johans image](#) för [VM VirtualBox](https://www.virtualbox.org/) (rekommenderat)
+Inför denna labb ska ni ha **installerat PHP, Apache och MySQL**. Detta kan ni antingen göra genom:
+1. [Johans image](preparations.md) för [VirtualBox](https://www.virtualbox.org/) (rekommenderat).
 2. Genom Xampp för Windows/Mac OS X.
 
 Johans image är rekommenderad då han kommer att supporta detta, då det innebär att alla har samma miljö. Dessutom kommer det krävas senare i kursen, gällande testning & deployment.
