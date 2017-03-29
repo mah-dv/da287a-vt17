@@ -16,7 +16,7 @@ use App\Guestbook;
 $guestbook = new Guestbook("db.json");
 
 if (isset($_POST['name']) and isset($_POST['message'])) {
-    // Post new message
+    // New guestbook post
     $guestbook->storePost($_POST['name'], $_POST['message']);
 }
 
@@ -74,7 +74,7 @@ class Guestbook
     {
         $this->filename = $filename;
 
-        // Creates databse if it not exists
+        // Creates json-file to store posts, if it don't exists
         if (file_get_contents($this->filename) === false) {
             file_put_contents($this->filename, json_encode([]));
         }
