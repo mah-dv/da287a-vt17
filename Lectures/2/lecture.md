@@ -1,6 +1,7 @@
 # Introduktion till PHP
 
 - [Presentation](http://www.slideshare.net/AntonTibblin/vt17da287aintro-till-php)
+- [Composer-presentation](composer.pdf)
 
 ## Dagens exempel - Gästbok
 
