@@ -180,7 +180,7 @@ i terminalen. Kommandot `cat` skriver ut innehållet i en fil i terminalen. Om S
 
 #### 2.2.2. Ersättning för paket
 
-Ibland dyker det upp nya paket som är bättre än de alternativ som används i projektet. Om ett team bestämmer sig för att byta till ett nytt paket, kan Composer hantera borttagning av beroenden. Detta görs med kommandot `composer remove paketnamn`. Testa att ersätta paketet *kronos/log* med *monolog/monolog*.
+Ibland dyker det upp nya paket som är bättre än de alternativ som används i projektet, exempelvis för att det nuvarande inte längre fungerar med en ny version av miljön. Om ett team bestämmer sig för att byta till ett nytt paket, kan Composer hantera borttagning av beroenden. Detta görs med kommandot `composer remove paketnamn`. Testa att ersätta paketet *kronos/log* med *monolog/monolog*.
 
 #### 2.2.3. Uppdatering av paket
 
@@ -202,7 +202,7 @@ Punkten läses ut som *"hit"* eller *"här"*. Öppna sedan filen med `nano` och 
 
 ```php
 <?php
-require '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
