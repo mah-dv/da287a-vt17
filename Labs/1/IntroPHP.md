@@ -4,10 +4,10 @@ I den första laborationen ska vi introduceras till php, dels genom CLI (command
     1. CLI - Första exempel
     2. WEB - Första exempel
     3. Hantera formulärsdata
-2. Om composer
-    1. Analysera en composer-fil
-    2. Skriv en egen composer-fil (manuellt & genom CLI)
-    3. Skriv ett mindre program m.h.a. composer
+2. Beroendehantering med Composer
+    1. Analysera en composer.json-fil
+    2. Skriv och hantera en egen composer.json-fil
+    3. Skriv ett enkelt program med hjälp av Composer
 
 ## Förberedelser
 Inför denna labb ska ni ha **installerat PHP, Apache och MySQL**. Detta kan ni antingen göra genom:
@@ -93,3 +93,134 @@ $name = $_GET['Anton']
 ```
 
 Om vi istället skickar data med HTTP-metoder POST, så använder vi `$_POST['key']`.
+
+## 2. Beroendehantering med Composer
+
+I den här delen kommer ni att få bekanta er med Composer som verktyg för beroendehantering i PHP. Vi kommer att lära oss hur composer.json-filer är uppbyggda, hur Composer används, samt att bygga en enkel applikation med beroenden. Ni kommer även att få bekanta er med Packagist och med semantisk versionering.
+
+Rekommenderad läsning:
+* [Basic usage - Composer](https://getcomposer.org/doc/01-basic-usage.md)
+* [Versions - Composer](https://getcomposer.org/doc/articles/versions.md)
+* [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html)
+
+### 2.1. Analysera en composer.json-fil
+
+Givet filen [composer.json](composer.json), besvara följande frågor:
+
+1. Vad gör det här paketet?
+2. Vem är paketets utgivare?
+3. Har utgivaren släppt några fler paket? Om ja, vilka?
+4. Finns det några nyare versioner av paketet? Om ja, är de bakåtkompatibla med det här paketet?
+5. Paketet anger en licens. Medger den att ni får använda den i ett publikt projekt?
+6. Följer paketet någon standard för autoloading?
+7. Ditt billiga webbhotell kör fortfarande PHP 5.2.4. Kommer du att kunna köra det här paketet där? Om ja, varför?
+8. Paketet kräver PHPUnit. Kommer det att installeras på en produktionsserver?
+
+### 2.2. Skriv och hantera en egen composer.json-fil
+
+Du kommer nu att få testa att skapa och underhålla en egen composer.json-fil med hjälp av Composers interaktiva verktyg. För den här delen kommer ni att använda er av terminalen, så öppna upp ett terminalfönster innan ni går vidare.
+
+#### 2.2.1. Skapa ett Composer-projekt
+
+Vi drar igång direkt med att skapa en katalog för ert nya projekt, som vi döper till *testing*. I Unix/Linux görs detta genom att skriva
+
+```
+$ mkdir testing
+```
+
+i terminalen. Kommandot `mkdir` står för *"make directory"*, och argumentet är det önskade namnet på katalogen. Gå sedan in i katalogen genom att skriva
+
+```
+$ cd testing
+```
+
+i terminalen. Kommandot `cd` läses som *"change directory"*. Vi är nu klara att initialisera ett Composer-projekt. Skriv in
+
+```
+$ composer init
+```
+
+för att börja. Vi vill att vår composer.json ska ha följande information:
+
+* Paketet ska heta mah/testing
+* Paketet ska ha en kort beskrivning
+* En utgivare ska vara angiven
+* Vi litar bara på stabila utgåvor av paket
+* Paketet ska vara licensierat med BSD-licensen
+* Paketet ska ha följande beroenden:
+  * catfan/medoo, version 1.1 eller senare
+  * kronos/log, senaste versionen
+* Vi vill också använda PHPUnit för testningen
+
+När composer.josn är genererad, installerar vi alla beroenden med hjälp av
+
+```
+$ composer install
+```
+
+Säkerställ att allt installerats genom att skriva
+
+```
+$ ls
+```
+
+i terminalen. Kommandot `ls` står för *list*, och används för att lista filer. Om listningen innehåller *composer.json*, *composer.lock* och *vendor* (se bild nedan) har allt fungerat bra.
+
+![Listning av filer](composer_result.png)
+
+#### 2.2.1. Tillägg av nya beroenden
+
+I takt med att ett projekt växer, uppstår det ofta behov av att använda fler paket i mjukvaran. Composer har stöd för detta genom kommandot `composer require`. Vi vill att vårt projekt ska använda sig av mikroramverket Slim (*slim/slim*). Lägg till det och säkerställ att det lagts till genom att skriva
+
+```
+$ cat composer.json
+```
+
+i terminalen. Kommandot `cat` skriver ut innehållet i en fil i terminalen. Om Slim syns i beroendelistan har allt fungerat.
+
+#### 2.2.2. Ersättning för paket
+
+Ibland dyker det upp nya paket som är bättre än de alternativ som används i projektet. Om ett team bestämmer sig för att byta till ett nytt paket, kan Composer hantera borttagning av beroenden. Detta görs med kommandot `composer remove paketnamn`. Testa att ersätta paketet *kronos/log* med *monolog/monolog*.
+
+#### 2.2.3. Uppdatering av paket
+
+Om ett paket kommer i en ny version med funktionalitet som krävs för ditt projekt, måste din composer.json uppdateras för att spegla det nya kravet. Detta görs med kommandot `composer require paketnamn:version`. Testa att kräva version 1.2 eller nyare av *catfan/medoo*. Om allt fungerat bra, kommer förändringen att kunna ses när vi kör `cat composer.json`igen.
+
+#### 2.2.4 Uppdatering av installationen
+
+Om projektteamet som ni jobbar med har uppdaterat projektets beroenden måste ni även uppdatera er installation. Detta görs med kommandot `composer update`. Ha för vana att köra detta kommando när ni hämtar hem en ny version av projektet.
+
+### 2.3. Skriv ett enkelt program med hjälp av Composer
+
+I det här avsnittet skriver vi ett väldigt enkelt program som loggar utskrifter till en fil. Vi utgår från programmet som ni skrev i avsnitt 1.2. Stå kvar i *testing*-projektet från uppgift 2.2, men kopiera över *index.php* från 1.1 till aktuell katalog med hjälp av kommandot `cp`, som står för *copy*. Om er *index.php* ligger i */home/student/*, kopierar ni filen genom att skriva
+
+```
+$ cp /home/student/index.php .
+```
+
+Punkten läses ut som *"hit"* eller *"här"*. Öppna sedan filen med `nano` och ladda in era beroenden genom att låta de första fem raderna i filen se ut så här:
+
+```php
+<?php
+require '/vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$log = new Logger('Laboration 1');
+$log->pushHandler(new StreamHandler('greetings.log', Logger::INFO));
+```
+
+Vi kan nu logga strängar till filen *greetings.log*, som kommer att skapas när scriptet körs. Logga till filen genom att använda funktionen `$log->info()`, som tar en sträng som indata. Naturligtvis vill vi att samma glada hälsning som i 1.1 även skrivs ut i filen. När ni är klara med att uppdatera filen, körs den som vanligt genom att skriva
+
+```
+$ php index.php Johan
+```
+
+Öppna upp loggfilen genom att skriva
+
+```
+$ cat greetings.log
+```
+
+Om loggningen syns, har allt fungerat.
