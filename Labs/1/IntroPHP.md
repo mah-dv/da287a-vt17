@@ -211,7 +211,7 @@ $log = new Logger('Laboration 1');
 $log->pushHandler(new StreamHandler('greetings.log', Logger::INFO));
 ```
 
-Vi kan nu logga strängar till filen *greetings.log*, som kommer att skapas när scriptet körs. Logga till filen genom att använda funktionen `$log->info()`, som tar en sträng som indata. Naturligtvis vill vi att samma glada hälsning som i 1.1 även skrivs ut i filen. När ni är klara med att uppdatera filen, körs den som vanligt genom att skriva
+Vi kan nu logga strängar till filen *greetings.log*, som kommer att skapas när scriptet körs. Logga till filen genom att använda funktionen `$log->info()`, som tar en sträng som argument. Naturligtvis vill vi att samma glada hälsning som i 1.1 även skrivs ut i filen. När ni är klara med att uppdatera filen, körs den som vanligt genom att skriva
 
 ```
 $ php index.php Johan
@@ -223,4 +223,4 @@ $ php index.php Johan
 $ cat greetings.log
 ```
 
-Om loggningen syns, har allt fungerat.
+Om hälsningen syns, har allt fungerat.
