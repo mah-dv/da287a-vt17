@@ -115,16 +115,16 @@ Composer är skrivet i PHP och hanteras inte av Ubuntus pakethanterare. Vi måst
 $ wget https://getcomposer.org/composer.phar
 ```
 
-Nu måste filen göras körbar, vilket i Linux görs så här:
-
-```
-$ chmod +x /usr/local/bin/composer
-```
-
 Filen måste nu flyttas till sin rätta plats och få ett vettigt namn. Observera att du behöver ha högre rättigheter för detta, så nu behöver vi använda vår gamla kompis sudo igen:
 
 ```
 $ sudo mv composer.phar /usr/local/bin/composer
+```
+
+Nu måste filen göras körbar, vilket i Linux görs så här:
+
+```
+$ chmod +x /usr/local/bin/composer
 ```
 
 Du kan nu köra Composer i valfritt projekt genom att skriva
