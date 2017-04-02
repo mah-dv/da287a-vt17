@@ -29,9 +29,12 @@ En webbapplikation ska byggas, denna ska ha följande funktionalitet:
 
 #### Enhörnings-API
 
-Som tidigare nämnt så hittar ni API:t här [http://unicorns.idioti.se/](http://unicorns.idioti.se/). Eftersom att API:t kan returnera data i olika format så är det viktigt att vi anger att vi vill ha data i `JSON`-format. Detta gör vi genom att ange följande information i vårt HTTP-anrop:
+Som tidigare nämnt så hittar ni API:t här [http://unicorns.idioti.se/](http://unicorns.idioti.se/). Eftersom att API:t kan returnera data i olika format så är det viktigt att vi anger att vi vill ha data i `JSON`-format. Detta gör vi genom att ange följande information i vår _header_ i vårt HTTP-anrop:
 - `Accept`: `application/json`
+
 Annars finns risken att vi får tillbaka en `HTML`-sida som svar - och just i detta fall är det inte något som vi vill ska hända. För att hämta en lista på alla enhörningar så anger ni följande URL: [http://unicorns.idioti.se/](http://unicorns.idioti.se/), och för att hämta information om en specifik enhörning så ange ni ett *id* på slutet i sökvägen, t.ex. för enhörning med id: 3 [http://unicorns.idioti.se/3](http://unicorns.idioti.se/3).
+
+För att göra HTTP-anrop i PHP så kan man t.ex. använda paketet [guzzle](https://github.com/guzzle/guzzle), vilket gör det enklare att ange t.ex. _headers_ i anropen, likt `accept` som är nämnt ovan.
 
 #### Logga besök
 
