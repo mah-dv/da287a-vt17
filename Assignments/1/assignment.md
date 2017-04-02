@@ -59,9 +59,11 @@ Inlämningen sker genom att ni publicerar er lösning på [Github](github.com) o
 
 Uppgiften ska vara inlämnad senaste söndagen den 9:e april, 23.59. Uppgifter som lämnas in efter deadline kommer att rättas i samband med nästa inlämningsuppgift.
 
+<hr>
+
 ## Bilder på exempellösning
 
-### LVisa alla enhörningar
+### Visa alla enhörningar
 
 ![unicorns](unicorns.png)
 
@@ -75,6 +77,4 @@ Uppgiften ska vara inlämnad senaste söndagen den 9:e april, 23.59. Uppgifter s
 
 ### Exempelvideo på lösningen
 
-<video controls>
-    <source src="Example.avi">
-</video>
+[![Exempellösning](http://img.youtube.com/vi/ALhjt2cvZSc/0.jpg)](https://www.youtube.com/watch?v=ALhjt2cvZSc)
