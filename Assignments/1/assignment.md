@@ -58,3 +58,23 @@ Inlämningen sker genom att ni publicerar er lösning på [Github](github.com) o
 ## Deadline
 
 Uppgiften ska vara inlämnad senaste söndagen den 9:e april, 23.59. Uppgifter som lämnas in efter deadline kommer att rättas i samband med nästa inlämningsuppgift.
+
+## Bilder på exempellösning
+
+### LVisa alla enhörningar
+
+![unicorns](unicorns.png)
+
+### Visa specifik enhörning
+
+![unicorn](unicorn.png)
+
+### Exempel på loggning
+
+![logs](logs.png)
+
+### Exempelvideo på lösningen
+
+<video controls>
+    <source src="Example.avi">
+</video>
