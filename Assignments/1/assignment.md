@@ -16,7 +16,7 @@ Dessutom ska ni förhålla er till de stil-riktlinjer som finns när man skriver
 
 Vissa påstår att enhörningar är ett mytologiskt väsen, andra hävdar starkt att de faktiskt är verkliga - och att de finns runt omkring oss. Oavsett vem som har rätt så är det ett väldigt fascinerande djur, vars horn sägs ha magiska krafter, som t.ex. att väcka liv i de döda.
 
-För att sprida information om enhöringar så har vi hittat en data-källa (i form ett API) som tillhandahåller just denna information i `JSON`-format. API:t hittar ni [här](#).
+För att sprida information om enhöringar så har vi hittat en data-källa (i form ett API) som tillhandahåller just denna information i `JSON`-format. API:t hittar ni [här](http://unicorns.idioti.se/).
 
 ### Webbapplikation
 
@@ -26,3 +26,27 @@ En webbapplikation ska byggas, denna ska ha följande funktionalitet:
     - Visa detaljerad information om en specifik enhörning från API:t
         - I detta fall ska användaren kunna välja vilken enhörning som visas
 - Webbapplikationen ska även logga när en användaren besöker någon av vyerna ovan
+
+#### Enhörnings-API
+
+Som tidigare nämnt så hittar ni API:t här [http://unicorns.idioti.se/](http://unicorns.idioti.se/). Eftersom att API:t kan returnera data i olika format så är det viktigt att vi anger att vi vill ha data i `JSON`-format. Detta gör vi genom att ange följande information i vårt HTTP-anrop:
+- `Accept`: `application/json`
+Annars finns risken att vi får tillbaka en `HTML`-sida som svar - och just i detta fall är det inte något som vi vill ska hända. För att hämta en lista på alla enhörningar så anger ni följande URL: [http://unicorns.idioti.se/](http://unicorns.idioti.se/), och för att hämta information om en specifik enhörning så ange ni ett *id* på slutet i sökvägen, t.ex. för enhörning med id: 3 [http://unicorns.idioti.se/3](http://unicorns.idioti.se/3).
+
+#### Logga besök
+
+Vi ska även i denna uppgift logga när de olika vyerna besöks, detta genom paketet [`monolog`](https://github.com/Seldaek/monolog), som ni säkert känner igen från laborationen. Ni ska använda composer för att ange information om er webbapplikation samt vilka beroende som finns till andra paket - för att applikationen ska fungera som förväntat. Det som ska loggas är:
+- Varje gång en vy i er webbplats visas, alltså varje gång en användare använder er webbapplikation.
+
+### Krav
+
+Följande krav finns på uppgiften:
+- Uppgiften ska följa uppgiftsbeskrivningen ovan
+- Ni ska följa PSR-1 & PSR-2 när det gällen hur ni skriver er kod
+- Ni ska använda composer för beroendehantering och informationom ert projekt
+
+*Viktigt*, Inlämningsuppgiftens startfil ska heta `index.php`.
+
+## Deadline
+
+Uppgiften ska vara inlämnad senaste söndagen den 9:e april, 23.59. Uppgifter som lämnas in efter deadline kommer att rättas i samband med nästa inlämningsuppgift.
