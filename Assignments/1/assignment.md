@@ -77,4 +77,4 @@ Uppgiften ska vara inlämnad senaste söndagen den 9:e april, 23.59. Uppgifter s
 
 ### Exempelvideo på lösningen
 
-[![Exempellösning](http://img.youtube.com/vi/ALhjt2cvZSc/0.jpg)](https://www.youtube.com/watch?v=ALhjt2cvZSc)
+[![Exempellösning](http://img.youtube.com/vi/ALhjt2cvZSc/0.jpg)](http://youtu.be/ALhjt2cvZSc)
