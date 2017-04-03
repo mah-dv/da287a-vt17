@@ -12,7 +12,7 @@ I den andra laborationen tittar vi på versionshanteirng med Git. Vi kommer blan
 	4. GUI med Bootstrap
 
 ## Förberedelser
-Inför denna labb ska ni ha **skapat ett konto på Github** och **installerat GitFlow**.
+Inför denna labb ska ni ha **skapat ett konto på Github**, **installerat GitFlow** och **installerat Postman**.
 
 ### Skapa ett konto hos Github
 
@@ -28,20 +28,22 @@ $ sudo apt-get install git-flow
 
 Det går även att installera GitFlow på macOS eller Windows. Installationsanvisningar finns här](https://github.com/nvie/gitflow/wiki/Installation).
 
-## Versionshantering med Git
+### Installera Postman
 
-### Introduktion till Git
+## 1. Versionshantering med Git
 
-### Delning av kod med Github
+### 1.1. Introduktion till Git
 
-### Semantisk versionering med GitFlow
+### 1.2. Delning av kod med Github
 
-## Introduktion till HTTP och REST
+### 1.3. Semantisk versionering med GitFlow
 
-### Postman
+## 2. Introduktion till HTTP och REST
 
-### Utforska enhörnings-API:t
+### 2.1. Postman
 
-### HTTP-anrop med PHP
+### 2.2. Utforska enhörnings-API:t
 
-### GUI med Bootstrap
+### 2.3. HTTP-anrop med PHP
+
+### 2.4. GUI med Bootstrap
