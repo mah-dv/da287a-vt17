@@ -124,7 +124,7 @@ $ sudo mv composer.phar /usr/local/bin/composer
 Nu måste filen göras körbar, vilket i Linux görs så här:
 
 ```
-$ chmod +x /usr/local/bin/composer
+$ sudo chmod +x /usr/local/bin/composer
 ```
 
 Du kan nu köra Composer i valfritt projekt genom att skriva
