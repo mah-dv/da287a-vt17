@@ -36,6 +36,8 @@ Det går även att installera GitFlow på macOS eller Windows. Installationsanvi
 
 ## 1. Versionshantering med Git
 
+### 1.1. Introduktion till Git
+
 GitHub har en enkel [online-guide för Git](https://try.github.io). Testa den innan du går vidare.
 
 Nät du har gått guiden testar vi att börja versionshantera förra veckans bygge med Git. Öppna upp ett terminalfönster och navigera till den kod du skrev förra veckan. Om den ligger i */home/student/testing*, räcker det med att du skriver
@@ -50,7 +52,30 @@ Initiera ett Git-repository genom att skriva
 $ git init
 ```
 
-Lägg sedan till alla filer (dvs den enda filen...) genom att skriva
+#### Ange filer som inte ska versionshanteras
+
+Det finns filer som vi inte vill versionshantera. Vi har tidigare i kursen prata om att undvika att versionshantera de bibliotek som vi laddar ner med Composer. Vi gör detta genom att ändra i filen *.gitignore*, som innehåller information om vilka filer som Git kommer att bortse från. Skapa och öppna filen genom att skriva
+
+```bash
+$ nano .gitignore
+```
+
+I filen skriver du en enda rad innan du sparar och avslutar nano igen:
+
+```
+/vendor/
+```
+
+`/vendor/` är namnet på den katalog i vilken Composer sparar alla nedladdade bibliotek. Gör en * första commit av *.gitignore* genom att skriva:
+
+```bash
+$ git add .gitignore
+$ git commit -m "Added a .gitignore file"
+```
+
+#### Vår första riktiga commit
+
+Lägg sedan till alla andra filer genom att skriva
 
 ```bash
 $ git add .
@@ -65,10 +90,48 @@ $ git status
 Skapa sedan en commit och ge den ett vettigt commit-meddelande:
 
 ```bash
-$ git commit -m "Ett vettigt commit-meddelande"
+$ git commit -m "A decent commit message"
 ```
 
 Nu är den aktuella versionen av koden sparad i ditt repository.
+
+#### En första uppdatering av koden
+
+Vi vill komplettera förra veckans loggningsexempel så att vi kan köra det på webben. Bygg ut din *index.php* så att den ser ut så här:
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$log = new Logger('Laboration 1');
+$log->pushHandler(new StreamHandler('greetings.log', Logger::INFO));
+
+$name = $_GET['name']
+$log->info($name);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Testing, testing</title>
+</head>
+<body>
+<?php
+echo "Hello, " . $name;
+?>
+</body>
+</html>
+```
+
+Spara och avsluta. Starta upp PHPs testserver genom att skriva
+
+```bash
+$ php -S localhost:8080
+```
+
+Gå in på [http://localhost:8080](http://localhost:8080) och säkerställ att allt fungerar. Avsluta sedan servern.
 
 ### 1.2. Delning av kod med Github
 
@@ -119,13 +182,203 @@ Att forka ett projekt på GitHub är lite annorlunda mot att klona det. Genom at
 
 ### 1.3. Semantisk versionering med GitFlow
 
+Vi ska nu bekanta oss med med GitFlow. Gå till projektet som vi arbetade med i uppgift 1.1. och intialisera GitFlow-modellen genom att skriva
+
+```bash
+$ git flow init -d
+```
+
+GitFlow sätter nu upp ett antal regler för hur olika avgreningar ska namnges. Med hjälp av växeln `-d` anger vi att vi vill använda GitFlows förvalda namngivningsrgler. Du kommer att se något i stil med:
+
+```
+Using default branch names.
+
+Which branch should be used for bringing forth production releases?
+   - develop
+   - master
+Branch name for production releases: [master] 
+
+Which branch should be used for integration of the "next release"?
+   - develop
+Branch name for "next release" development: [develop] 
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/] 
+Bugfix branches? [bugfix/] 
+Release branches? [release/] 
+Hotfix branches? [hotfix/] 
+Support branches? [support/] 
+Version tag prefix? [] 
+Hooks and filters directory? [/home/student/testing/.git/hooks] 
+```
+
+Säkerställ att du arbetar i develop-branchen genom att skriva
+
+```bash
+$ git branch
+```
+
+Får du svaret
+
+```
+* develop
+  master
+```
+
+har allt fungerat som det ska. Vad vi har kvar att göra är att publicera develop-branchen på GitHub. Vi gör det genom att skriva 
+
+```bash
+$ git push -u origin develop
+```
+
+Gå in på GitHub och titta på ditt projekt. Du ska nu kunna se två brancher (se bild nedan). Klicka på länken med texten *2 branches*. Du får nu upp en lista av alla dina brancher (i det här fallet två). Det är en god idé att byta ut den förvalda branchen från *master* till *develop* genom att klicka på knappen **Change default branch** och jobba sig vidare därifrån.
+
+![2 branches](branches.png)
+
+Du kan nu avgrena feature-, release- och hotfix-brancher som du vill. Vi kommer att testa att arbeta med en feature-branch, en release-branch, göra en release och testa på att lösa en merge-konflikt.
+
+#### Feature-brancher
+
+Vi ska testa att byta ut bakgrundsfärgen på vår webbsida genom att lägga till en CSS-fil.
+
+##### Skapa en feature-branch
+
+Börja med att skapa en feature-branch kallad *feature/yellow-background* genom att skriva följande i terminalen:
+
+```bash
+$ git flow feature start yellow-background
+```
+
+Om du nu skriver
+
+```bash
+$ git branch
+```
+
+kommer du att se att du numera har tre branches och att din aktiva branch just nu är *feature/yellow-background*.
+
+##### Gör filändringar
+
+Skapa en fil kallad *background.css* i projektkatalogen med exempelvis nano genom att skriva
+
+```bash
+$ nano background.css
+```
+
+Skriv in följande i filen
+
+```css
+body {
+  background-color: yellow;
+}
+```
+
+och spara sedan innan du avslutar programmet. Öppna nu upp PHP-filen och lägg till fölljande rad i head-elementet:
+
+```html
+<link rel="stylesheet" type="text/css" href="background.css">
+```
+
+Säkerställ att webbsidan är gul genom att starta upp PHP-servern och gå in på [http://localhost:8080?name=Johan](http://localhost:8080?name=Johan). När du sett att webbsidan är gul är det dags att göra en commit. Gör det genom att skriva
+
+```bash
+$ git add .
+$ git commit -m "Added a yellow background"
+```
+
+I ett verkligt projekt hade vår feature-branch haft betydligt fler commits och eventuellt delats med andra utvecklare, men vi nöjer oss med det här för labben. Vi går nu vidare till att mergea in vår feature-branch i *develop* och avsluta *feature/yellow-background* genom att skriva
+
+```bash
+$ git flow feature finish yellow-background
+```
+
+Om du nu skriver
+
+```bash
+$ git branch
+```
+
+kommer du att se att feature-branchen är borttagen och att du är tillbaka i *develop*. Om du startar upp PHP-servern igen kommer du att se att bakgrunden fortfarande är gul, vilket vi hade förväntat oss.
+
+#### Release-brancher
+
+Nästa steg är att göra en release. Eftersom vårt projekt är bra nog för en publik release vill vi namnge den versionen *1.0.0*. Skapa en release genom att köra
+
+```bash
+$ git flow release start 1.0.0
+```
+
+Passa på att uppdatera beskrivningen av ditt projekt genom att öppna *composer.json* och gör en mindre ändring av värdet som nyckeln *description* pekar på. Spara sedan och gör en commit.
+
+#### Förbered en merge-konflikt
+
+Här gör vi en mindre paus för att simulera en merge-konflikt som du garanterat kommer att stöta på. Växla till *develop* genom att skriva
+
+```bash
+$ git checkout develop
+```
+
+Gör en ny, men annorlunda förändring av projektbeskrivningen och skapa en ny commit. När du är klar, växla tillbaka till release-grenen genom att skriva
+
+```bash
+$ git checkout release/1.0.0
+```
+
+#### Förbered en release
+
+Vi är nu klara att göra releasen genom att skriva följande:
+
+```bash
+$ git flow release finish 1.0.0
+```
+
+Du kommer nu att få ange ett commit-meddelande med hjälp av nano. När du är nöjd, spara och avsluta. Du kommer direkt att skickas till nano igen, den här gången för att ange ett meddelande rörande release 1.0.0-taggen. Ange något bra, exempelvis "My first release. Yay!" Du kommer att få ett felmeddelande om att det uppstått en konflikt som du måste lösa. Vilka filer som bråkar ser du genom att skriva
+
+```bash
+$ git status
+```
+
+#### Lös merge-konflikten
+
+Vi vet från ovan att vi måste fixa *composer.json*, så vi öppnar upp den filen. De rader som kolliderar markeras med
+
+```
+<<<<<<< HEAD
+"description": "Beskrivningen som finns i develop",
+=======
+"description": "Beskrivningen som finns i release-branchen",
+>>>>>>> 1.0.0
+```
+
+Spara den rad som finns mellan `=======` och `>>>>>>> 1.0.0` och ta bort de övriga fyra. I en verklig konflikt hade det troligtvis funnits större problem, och då kan ett grafisk verktyg vara enklare att använda. Mer information om merge-konflikter [finns på GitHub](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
+
+#### Slutför releasen
+
+Vi är nu slutligen klara att slutföra releasen. Skriv
+
+```bash
+$ git flow release finish 1.0.0
+```
+
+igen. Notera att Git har sparat våra meddelanden från förra försöket och du behöver därför inte skriva in dem igen. När vi är klara med releasen, vill vi så klart göra en push till GitHub:
+
+```bash
+$ git push --all
+```
+
+Du har nu pushat alla dina branches (dvs *master* och *develop*). Eftersom vi har skapat en ny version (1.0.0), vill vi även skicka med tag-informationen:
+
+```bash
+$ git push --tags
+```
+
 ## 2. Introduktion till HTTP och REST
 När man arbetar med webben så inkluderar detta ofta att man hanterar data mellan olika källor. I denna labb innebär det att vi kommer att arbeta med data om enhörningar, närmare bestämt med data från det enhörnings-API som ni hittar på följande adress: [http://unicorns.idioti.se/](http://unicorns.idioti.se/). Surfa till sidan om bekanta er med dess uppbyggnad, som egentligen består av två vyer:
 - Visa alla enhörningar
 - Visa information om en specifik enhörning
 Notera vilka URL:r som används för att visa alla enhörningar/information om en specifik enhörning. Ser ni ett mönster?
 
-### 2.1. Postman / RestClient
+### 2.1. Postman / RESTClient
 När man arbetar med API:r så är det bra att ha dokumentation kring det API som man arbetar med. Så att man kan se vilka tjänster som API:t tillhandahåller. I vårt fall finns dokumentation om enhörnings-API:t på denna adress [http://unicorns.idioti.se/api.html](http://unicorns.idioti.se/api.html). Läs igenom detta - och fråga labbhandledaren om oklarheter finns.
 
 När ni satt er in API:t så är det dags att testa API:t! Eftersom det inte är helt enkelt att testa annat än `GET`-metoder från webbläsaren så använder man ofta verktyg till detta. Exempel på sådana verktyg är [`Postman`](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop), som är en app till Chrome och [`RestClient`](https://addons.mozilla.org/sv-se/firefox/addon/restclient/) som är ett addon till Firefox. Genom dessa verktyg kan man enkelt testa att anrop olika API:r.

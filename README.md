@@ -8,7 +8,8 @@ På denna sida kan ni hitta information som är kopplat till kursen DA287A - Web
 3. [Versionshantering med Git och GitFlow, samt webbtjänster med HTTP och REST](/Lectures/3/lecture.md)
 
 ## Laborationer
-- [Laboration 1a](/Labs/1/IntroPHP.md)
+- [Laboration 1](/Labs/1/IntroPHP.md)
+- [Laboration 2](/Labs/2/git.md)
 
 ## Inlämningsuppgifter
 - [Inlämning 1](/Assignments/1/assignment.md)
