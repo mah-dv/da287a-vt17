@@ -152,7 +152,7 @@ för att börja. Vi vill att vår composer.json ska ha följande information:
   * kronos/log, senaste versionen
 * Vi vill också använda PHPUnit för testningen
 
-När composer.josn är genererad, installerar vi alla beroenden med hjälp av
+När composer.json är genererad, installerar vi alla beroenden med hjälp av
 
 ```
 $ composer install
