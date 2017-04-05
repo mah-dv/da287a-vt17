@@ -109,7 +109,7 @@ use Monolog\Handler\StreamHandler;
 $log = new Logger('Laboration 1');
 $log->pushHandler(new StreamHandler('greetings.log', Logger::INFO));
 
-$name = $_GET['name']
+$name = $_GET['name'];
 $log->info($name);
 ?>
 <!DOCTYPE html>
@@ -196,20 +196,20 @@ Using default branch names.
 Which branch should be used for bringing forth production releases?
    - develop
    - master
-Branch name for production releases: [master] 
+Branch name for production releases: [master]
 
 Which branch should be used for integration of the "next release"?
    - develop
-Branch name for "next release" development: [develop] 
+Branch name for "next release" development: [develop]
 
 How to name your supporting branch prefixes?
-Feature branches? [feature/] 
-Bugfix branches? [bugfix/] 
-Release branches? [release/] 
-Hotfix branches? [hotfix/] 
-Support branches? [support/] 
-Version tag prefix? [] 
-Hooks and filters directory? [/home/student/testing/.git/hooks] 
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+Hooks and filters directory? [/home/student/testing/.git/hooks]
 ```
 
 Säkerställ att du arbetar i develop-branchen genom att skriva
@@ -225,7 +225,7 @@ Får du svaret
   master
 ```
 
-har allt fungerat som det ska. Vad vi har kvar att göra är att publicera develop-branchen på GitHub. Vi gör det genom att skriva 
+har allt fungerat som det ska. Vad vi har kvar att göra är att publicera develop-branchen på GitHub. Vi gör det genom att skriva
 
 ```bash
 $ git push -u origin develop
