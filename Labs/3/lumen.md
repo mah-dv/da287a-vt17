@@ -74,7 +74,7 @@ $app->get('/products', function () {
 ```
 
 ## 3.2. Datakälla - produkter
-Skapa en datakälla (i t.ex. `json`), eller använd denna exempelfil nedan:
+Skapa en datakälla med produkter (i t.ex. `json`), eller använd denna exempelfil nedan:
 ```json
 {
     "products": [
