@@ -15,12 +15,14 @@ Frågor som ni ska besvara innan ni börjar bygga er webbtjäst är:
 
 Skissa upp detta, så att ni vet hur ert API ska utformas.
 
+*Visa detta för labbhandledaren för att stämma av att det ser bra ut*
+
 ## 2. Installera Lumen
 Eftersom att vi ska jobba i Lumen så är det viktigt att ni skapar ett `Lumen`-projekt att arbeta i. Vill vi använda Lumens egna installator så behöver vi snabbt konfigurera vår miljö.
 
 ## 2.1. Förberedelser inför Lumen-installation
 
-### Uppdater `.bashrc`
+#### Uppdatera `.bashrc`
 Öppna filen `.bashrc` genom:
 ```bash
 $ nano .bashrc
@@ -31,14 +33,14 @@ export PATH="$PATH:~/.config/composer/vendor/bin"
 ```
 Spara filen och avsluta. Stäng terminalen och öppna den igen.
 
-### Installera php-zip
+#### Installera php-zip
 Laravel behöver paketet *php-zip* för att kunna köras. Installera detta genom att skriva
 
 ```bash
-$ sudo apt-get instsall php-zip
+$ sudo apt-get install php-zip
 ```
 
-### Installera Laravel med hjälp av Composer genom att skriva
+#### Installera Laravel med hjälp av Composer genom att skriva
 ```bash
 $ composer global require "laravel/lumen-installer=~1.0"
 ```
@@ -47,10 +49,10 @@ $ composer global require "laravel/lumen-installer=~1.0"
 Nu är vi redo att följa [installationsguiden](https://lumen.laravel.com/docs/5.4) på lumens webbplats. Navigera till önskad plats där vi vill att projektet ska ligga och kör:
 
 ```bash
-lumen new Lab3
+lumen new lab3
 ```
 
-*Lab3* ovan är namnet på projektet som skapas.
+*lab3* ovan är namnet på projektet som skapas.
 
 Testa att allt fungerar genom att i terminalen navigera till mappen `public` och starta en PHP-server genom:
 ```bash
@@ -66,7 +68,7 @@ Surfa sedan till adressen [http://localhost/](http://localhost/) för att se att
 Börja med att skapa de routes (som ni kom fram till i del 1. av labben), se [lumens dokumentation](https://lumen.laravel.com/docs/5.4/routing) om ni behöver fräscha upp minnet hur man gör detta. Ni bör alltså skapa routes för att `skapa`, `lista`, `visa`, `uppdatera` & `radera` produkter. Dubbelkolla att routes fungerar genom exempelutskrifter, t.ex.
 
 ```php
-$app->get('products', function () {
+$app->get('/products', function () {
     return 'Soon, we will list the products here!';
 });
 ```
