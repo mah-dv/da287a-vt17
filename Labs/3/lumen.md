@@ -73,6 +73,8 @@ $app->get('/products', function () {
 });
 ```
 
+*OBS*. För att testa `POST`-anrop till er webbtjänst, [så tänk på detta](http://stackoverflow.com/questions/13132794/firefox-add-on-restclient-how-to-input-post-parameters)
+
 ## 3.2. Datakälla - produkter
 Skapa en datakälla med produkter (i t.ex. `json`), eller använd denna exempelfil nedan:
 ```json
