@@ -57,7 +57,7 @@ Fungerar det som förväntat så borde det se ut såhär:
 Vi ska förbättra vårt produkt-API från förra labben och istället för att bygga en lösning när vi sparar produkterna i `json`-format, spara dessa i en databas. Vi ska dessutom använda `migrations` för versionshantering av databasen och `seeds` för att populera databasen. Detta för att underlätta utvecklingen av API:t.
 
 ### 2.1. Resurser
-Vi ska i denna labb hantera 3st resurser, med följande egenskaper:
+Vi ska i denna labb hantera tre resurser, med följande egenskaper:
 1. Produkt
     - id
     - titel
@@ -82,13 +82,13 @@ De ska ha följande relationer:
 - En produkt kan ha flera recensioner
 - En recension kan bara tillhöra en produkt
 
-Inspireras gärna av [tillhörande föreläsning](../../Lectures/5/lecture.md) och föreläsningens exempel som ni kan hitta [här på github](https://github.com/Tibbelit/da287a-lumen-movie-example).
+Inspireras gärna av [tillhörande föreläsning](../../Lectures/5/lecture.md) och föreläsningens exempel som ni kan hitta [här på GitHub](https://github.com/Tibbelit/da287a-lumen-movie-example).
 
 #### 2.1.1 Rita ett ER-diagram
 Utifrån beskrivningen ovan, skapa ett ER-diagram. Diskutera gärna ER-diagrammet med era kursare och handledare för att få detta korrekt innan ni går vidare.
 
 #### 2.1.2. Skapa migrations
-Nu är dags för er att skapa tabellerna i databasen genom `migrations`. Känner ni er inte bekväma mer `migrations` så läs den [officiella dokumentation](https://laravel.com/docs/5.4/migrations), titta på hur vi skapade våra migrations i [senaste föreläsningen]() och titta på de `schema` vi skapade för våra `migrations` på föreläsningen [genom github](https://github.com/Tibbelit/da287a-lumen-movie-example/tree/master/database/migrations).
+Nu är dags för er att skapa tabellerna i databasen genom `migrations`. Känner ni er inte bekväma mer `migrations` så läs den [officiella dokumentation](https://laravel.com/docs/5.4/migrations), titta på hur vi skapade våra migrations i [senaste föreläsningen]() och titta på de `schema` vi skapade för våra `migrations` på föreläsningen [genom GitHub](https://github.com/Tibbelit/da287a-lumen-movie-example/tree/master/database/migrations).
 
 Skapa följande tabeller (tänk på att följa namngivningskonventaioner för laravel/lumen: singular och gemener):
 - products
@@ -109,7 +109,7 @@ Skapa följande tabeller (tänk på att följa namngivningskonventaioner för la
     - product_id
     - store_id
 
-Alla tabeller ska sedan ha kolumnerna `create_at` och `updated_at` som ni kan skapa genom följande kod i alla tabellerna:
+Alla tabeller ska sedan ha kolumnerna `created_at` och `updated_at` som ni kan skapa genom följande kod i alla tabellerna:
 ```php
 $table->timestamps();
 ```
@@ -122,12 +122,12 @@ för att verkställa era `migrations` och skapa tabellerna.
 
 #### 2.1.3. Skapa seeding
 En databas utan data är inte speciellt roligt! Det är därför dags för er att skapa lite data som vi kan arbeta med i labben. Skapa följande:
-- Minst 3st produkter
-- Minst 3st butiker
+- Minst tre produkter
+- Minst tre butiker
 - Skapa kopplingar mellan produkter och butiker (många till många-relation)
-- Skapa minst 3st recensioner som ni kopplar till valfria produkter.
+- Skapa minst tre recensioner som ni kopplar till valfria produkter.
 
-Känner ni er inte bekväma mer `seeding` så läs den [officiella dokumentation](https://laravel.com/docs/5.4/seeding), titta på hur vi skapade våra seeds i [senaste föreläsningen]() och titta på de `inserts` vi     skapade för våra `seeding` på föreläsningen [genom github](https://github.com/Tibbelit/da287a-lumen-movie-example/tree/master/database/seeds).
+Känner ni er inte bekväma mer `seeding` så läs den [officiella dokumentation](https://laravel.com/docs/5.4/seeding), titta på hur vi skapade våra seeds i [senaste föreläsningen]() och titta på de `inserts` vi     skapade för våra `seeding` på föreläsningen [genom GitHub](https://github.com/Tibbelit/da287a-lumen-movie-example/tree/master/database/seeds).
 
 När ni skapat och definierat `seeds` för tabellerna ovan så kör
 ```bash
