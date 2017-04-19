@@ -48,7 +48,7 @@ QUEUE_DRIVER=array
 
 Vi kommer senare i labben att använda oss utav `php artisan`, nu när ni installerat memcached så dubbelkolla att detta fungerar som förväntat genom att i *terminalen* (i ert lumen-projekt) skriva:
 ```bash
-php artisan[pap artisanphp-artisan]
+php artisan
 ```
 Fungerar det som förväntat så borde det se ut såhär:
 ![php artisan](php-artisan.png)
@@ -76,6 +76,7 @@ Vi ska i denna labb hantera tre resurser, med följande egenskaper:
     - kommentar
     - skapad
     - uppdaterad
+
 De ska ha följande relationer:
 - En produkt kan tillhöra flera butiker
 - En butik kan ha flera produkter
