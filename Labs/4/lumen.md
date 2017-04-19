@@ -137,4 +137,26 @@ php artisan db:seed
 för att verkställa era `seeds` och populera tabellerna.
 
 
-### 2.2. Uppdatera era controllers
+### 2.2. Uppdatera/bygg era routes & controllers
+Nu när vi har en databas som kan förse vår applikation med data (produkter/butiker/recensioner) så ska vi strukturera upp vår applikation, likt det vi gjorde förra laborationen. Gör routes för att:
+1. Hämta alla produkter
+2. Hämta detaljerad information om en produkt
+
+De routes som ni skapar ska skicka vidare anropet till en controller vid namn `ProductsController`. I er `ProductsController` skapa följande funktioner:
+1. `index`
+    - listar alla produkter
+2. `show`
+    - visar detaljerd information om en produkt.
+        - Basinformation om produkten
+        - Vilka butiker den finns i
+        - Recensioner kring produkten
+
+Behöver ni inspiration för hur detta ska göras, så titta i den [officiella dokumentation](https://laravel.com/docs/5.4/seeding), samt i det exempel som vi[gjorde på föreläsningen](https://github.com/Tibbelit/da287a-lumen-movie-example/tree/master). Ni ska göra i princip samma sak som vi gjorde med filmerna.
+
+## 3. Vidareutveckling av er webbtjänst
+Nu har ni byggt en bra grund för er webbtjänst! Men det finns mycket kvar att göra! Beroende på hur mycket tid ni har, så är här några punkter som borde vidareutvecklas:
+- Visa upp butiker / butik med produkter
+- Visa upp recensioner / recension med produkt
+- CRUD (create, read, update, delete) för alla våra resurser.
+
+Har ni frågor på dessa punkterna så fråga gärna labbhandledaren!
