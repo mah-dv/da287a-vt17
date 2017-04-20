@@ -16,7 +16,7 @@ _Superbutiken_ har tagit fram en kravspecifikation gällande hur API:t ska utfor
 
 - GET `/products` ([exempelsvar](json_products.json))
     - Listar alla produkter
-- GET `/product/{id}` ([exempelsvar](json_product.json))
+- GET `/products/{id}` ([exempelsvar](json_product.json))
     - Visar detaljerad information om en produkt
         - Inklusive produktens recensioner
         - Inklusive vilka butiker produkten finns i
