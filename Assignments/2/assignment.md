@@ -90,10 +90,10 @@ Definiera de routes som behövs i `rountes/web.php`, skapa de modeller som behö
 
 ## 3. Bygg ihop ert API med _Superbutikens_ GUI
 
-Ni hittar _Superbutikens_ GUI [här på GitHub](https://github.com/Tibbelit/da287a-vt-assignment2-client). Instruktioner för hur ni kommer igång med GUI:t finns i projekts `readme`-fil.
+Ni hittar _Superbutikens_ GUI [här på GitHub](https://github.com/Tibbelit/da287a-vt-assignment2-client). Instruktioner för hur ni kommer igång med GUI:t finns i projekts `README.md`-fil. Ladda ner detta och testa så att det fungerar som förväntat.
 
 ### 3.1. CORS - Måste fixas!
-Normalt sett så vill man inte att det genom JavaScript ska kunna skickas ajax-anrop till tjänster som denna - om anropen kommer från en annan domän. För den intresserade kan man [läsa mer här](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). Vi vill i alla fall göra så att _vem som helst_ i detta fall får lov att använda vårt API genom ajax-anrop - eftersom _Superbutiken_ vill kunna dela sig av sin data till alla!
+Normalt sett så vill man inte att det genom JavaScript ska kunna skickas ajax-anrop till tjänster som denna - om anropen kommer från en annan domän än vår egen. För den intresserade kan man [läsa mer om detta här](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). Vi vill i alla fall göra så att _vem som helst_ i detta fall får lov att använda vårt API genom ajax-anrop - eftersom _Superbutiken_ vill kunna dela sig av sin data till alla!
 
 Detta kan ibland vara lite knepigt, men som tur är finns det paket för detta! Ett exempel på ett sådant paket är [Lumen-CORS](https://github.com/palanik/lumen-cors).
 1. Installera detta paketet genom `composer require "palanik/lumen-cors:dev-master"`
@@ -115,6 +115,10 @@ När ni byggt ert API så att det motsvarar de krav beskrivit ovan - så kommer 
 Följande krav finns på uppgiften:
 
 - Uppgiften ska följa uppgiftsbeskrivningen ovan
+- Ni ska använda er av `migrations` för att skapa era tabeller
+- Ni ska använda er utav `seeds` för att populera era tabeller
+- Ni ska använda er utav `controllers` för att hantera logiken för er applikation
+- Ni ska använda er utav `models` för att mappar era resurser mot databaser (ORM)
 - Ni ska följa PSR-1 & PSR-2 när det gällen hur ni skriver er kod
 
 ## 5. Inlämning & deadline
@@ -122,5 +126,24 @@ Inlämningen sker genom att ni publicerar er lösning på Github och skickar in 
 
 Uppgiften ska vara inlämnad senaste söndagen den *30:e april*, 23.59. Uppgifter som lämnas in efter deadline kommer att rättas i samband med nästa inlämningsuppgift.
 
-
 ## 6. Exempellösningar
+
+### 6.1. Video
+
+[![Exempellösning](http://img.youtube.com/vi/ALhjt2cvZSc/0.jpg)](https://youtu.be/Xh0xWvBPHuM)
+
+### 6.2. Bild - Start
+
+![Startsida](ass2_start.png)
+
+### 6.3. Bild - Detaljer om en product
+
+![Startsida](ass2_modal.png)
+
+### 6.4. Bild - Butiker
+
+![Startsida](ass2_stores.png)
+
+### 6.5. Bild - Recensioner
+
+![Startsida](ass2_reviews.png)
