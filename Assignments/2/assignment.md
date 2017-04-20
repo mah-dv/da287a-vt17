@@ -44,7 +44,7 @@ foreach ($request->get("stores") as $store) {
 
 Följande resurser, med databasegenskaper nedan, ska finnas (*notera att dessa sklijer sig något från labben*):
 
-- product
+- products
     - id (auto_increment, primary key)
     - title (text)
     - brand (text)
@@ -53,13 +53,13 @@ Följande resurser, med databasegenskaper nedan, ska finnas (*notera att dessa s
     - price (integer)
     - created_at (timestamp)
     - updated_at (timestamp)
-- store
+- stores
     - id (auto_increment, primary key)
     - name (text)
     - city (text)
     - created_at (timestamp)
     - updated_at (timestamp)
-- review
+- reviews
     - id (auto_increment, primary key)
     - name (text)
     - comment (text)
