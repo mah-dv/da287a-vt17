@@ -4,7 +4,7 @@ I denna inlämningsuppgift ska vi bygga ett enklare API med ramverket [Lumen](ht
 
 ## 1. Story
 
-Ni har blivit kontaktade av företaget _Superbutiken_ som utvecklar en webbsida lista upp tekniska produkter, var dessa produkter kan inhandlas, samt recensioner kring dessa produkter. _Superbutikens_ största problem är att kan ingenting om datalagring och serverprogrammering - men är å andra sidan ganska bra på att bygga användargränssnitt genom HTML/CSS/JS.
+Ni har blivit kontaktade av företaget _Superbutiken_ som utvecklar en webbsida som listar upp tekniska produkter, var dessa produkter kan inhandlas, samt recensioner kring dessa produkter. _Superbutikens_ största problem är att de kan ingenting om datalagring och serverprogrammering - men är å andra sidan ganska bra på att bygga användargränssnitt genom HTML/CSS/JS.
 
 De vill nu ha hjälp med att bygga ett API där information om _produkter_, _butiker_ och _recensioner_ lagras. De vill även att man i efterhand kan lägga till nya produkter och knyta dessa till olika butiker. Självklart finns det stora planer på vidareutveckling - men än så länge så nöjer de sig med detta.
 
@@ -33,7 +33,7 @@ _Superbutiken_ har tagit fram en kravspecifikation gällande hur API:t ska utfor
 - GET `/reviews` ([exempelsvar](json_reviews.json))
     - Lista alla recensioner
 
-* När man tar emot en array av data i ett anrop så kan man enkelt iterara över denna genom en `foreach`-loop, likt detta:
+&ast; När man tar emot en array av data i ett anrop så kan man enkelt iterera över denna genom en `foreach`-loop, likt detta:
 ```php
 foreach ($request->get("stores") as $store) {
     // Do something fun!
@@ -76,7 +76,7 @@ Följande resurser, med databasegenskaper nedan, ska finnas (*notera att dessa s
 
 ### 2.2. Data till databasen
 
-Eftersom _Superbutiken_ redan har några produkter, butiker & recensioner så delar de gärna med sig av sina underlag för s.k. `seeds` för att fylla upp databasen.
+Eftersom _Superbutiken_ redan har några produkter, butiker och recensioner så delar de gärna med sig av sina underlag för s.k. `seeds` för att fylla upp databasen.
 - [Seeds för products](seed_products.php)
 - [Seeds för stores](seed_stores.php)
 - [Seeds för reviews](seed_reviews.php)
@@ -84,9 +84,9 @@ Eftersom _Superbutiken_ redan har några produkter, butiker & recensioner så de
 
 ### 2.3. Routes, models & controllers
 
-Definiera de routes som behövs i `rountes/web.php`, skapa de modeller som behövs i `app/` och gör de controllers som krävs för ett uppfyller kraven ovan i `app/http/controllers/`
+Definiera de routes som behövs i `routes/web.php`, skapa de modeller som behövs i `app/` och gör de controllers som krävs för ett uppfyller kraven ovan i `app/http/controllers/`
 
-*Dubbelkolla sedan att ert API motsvarar de exempelsvar som finns under rubriken "Rountes" ovan*
+*Dubbelkolla sedan att ert API motsvarar de exempelsvar som finns under rubriken "Routes" ovan*
 
 ## 3. Bygg ihop ert API med _Superbutikens_ GUI
 
