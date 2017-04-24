@@ -1,6 +1,6 @@
 # Labb 5, Laravel
 
-I denna labb ska vi titta närmre på laravel och bygga vår första webbapplikation med ett GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att ni tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje del i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där ni förväntas att hitta svar på ev. frågor.
+I denna labb ska vi titta närmre på Laravel och bygga vår första webbapplikation med ett GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att ni tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje del i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där ni förväntas att hitta svar på ev. frågor.
 
 Laravel är _storebror_ till ramverket [Lumen](lumen.laravel.com) och således kommer ni att känna igen er mycket, speciellt från [föregående laboration](../4/lumen.md).
 
@@ -16,7 +16,7 @@ composer global require "laravel/installer"
 ### 1.2. Skapa ett nytt Laravel-projekt
 Skapa ett nytt lumen-projekt som ni exempelvis kallar för `Lab5` genom:
 ```bash
-laravel new Lab4
+laravel new Lab5
 ```
 Alternativt:
 ```bash
@@ -30,7 +30,7 @@ Surfa sedan till [http://localhost:8080/](http://localhost:8080/) för att se at
 
 Utförliggare dokumentation finns under [installation](https://laravel.com/docs/5.4/installation) i Laravels dokumentation.
 
-*Om ni inte gjort föregående laboration kan ni behöva installera memcached. Intruktioner för detta hitta nu [här](../4/lumen.md#12-installera-memcached)*
+*Om ni inte gjort föregående laboration kan ni behöva installera memcached. Instruktioner för detta hitta ni [här](../4/lumen.md#12-installera-memcached).*
 
 ## 2. Labbuppgiften - Att bygga ett webb-GUI till våra produkter
 
@@ -107,7 +107,7 @@ Route::resource('/producs', 'ProductController');
 #### 2.2.2. Skapa Controller
 Nu behöver vi ju skapa vår `ProductController`. Eftersom att den ska representera en resurs, så kan vi använda `PHP Artisan`för att skapa en "färdig" controller till oss genom:
 ```bash
-- php artisan make:controller ProductController --resource
+php artisan make:controller ProductController --resource
 ```
 
 ``--resource`` tillägget ovan gör att funktioner för [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) skapas inuti er controller.
@@ -163,7 +163,7 @@ Vi kan sedan skriva ut alla produkter i vår template genom `foreach`-loop i vå
 ```
 
 ### 4. Bygg klart er applikation
-Ni ska nu bygga klart er webbapplikation, genom att komplettera de routes som ni skapat (ni kan se era routes genom `php artisan route:list):
+Ni ska nu bygga klart er webbapplikation, genom att komplettera de routes som ni skapat (ni kan se era routes genom `php artisan route:list`):
 ```bash
 +--------+-----------+-------------------------+------------------+------------------------------------------------+--------------+
 | Domain | Method    | URI                     | Name             | Action                                         | Middleware   |
