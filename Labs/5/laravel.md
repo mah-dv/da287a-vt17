@@ -1,10 +1,10 @@
 # Labb 4, Lumen - Controllers/Models/Databas
 
-I denna labb ska vi titta på laravel och bygga vår första webbapplikation med ett webb-GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att ni tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje de i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där ni förväntas att hitta svar på era frågor.
+I denna labb ska vi titta närmre på laravel och bygga vår första webbapplikation med ett GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att ni tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje del i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där ni förväntas att hitta svar på ev. frågor.
 
 Laravel är _storebror_ till ramverket [Lumen](lumen.laravel.com) och således kommer ni att känna igen er mycket, speciellt från [föregående laboration](../4/lumen.md).
 
-Den kod som vi skrev till tillhörande föreläsning hittar nu här: [https://github.com/Tibbelit/da287a-laravel-movie-example](https://github.com/Tibbelit/da287a-laravel-movie-example)
+Den kod som vi skrev till tillhörande föreläsning hittar nu här: [https://github.com/Tibbelit/da287a-laravel-movie-example](https://github.com/Tibbelit/da287a-laravel-movie-example).
 
 ## 1. Förberedelser
 
@@ -28,6 +28,8 @@ php -S localhost:8080
 ```
 Surfa sedan till [http://localhost:8080/](http://localhost:8080/) för att se att allt fungerar som det ska.
 
+Utförliggare dokumentation finns under [installation](https://laravel.com/docs/5.4/installation) i Laravels dokumentation.
+
 *Om ni inte gjort föregående laboration kan ni behöva installera memcached. Intruktioner för detta hitta nu [här](../4/lumen.md#12-installera-memcached)*
 
 ## 2. Labbuppgiften - Att bygga ett webb-GUI till våra produkter
@@ -47,6 +49,8 @@ Utgå från [migrations-filen för produkter som du skapde i förra laborationen
 php artisan migrate
 ```
 
+Utförliggare dokumentation finns under [migrations](https://laravel.com/docs/5.4/migrations) i Laravels dokumentation.
+
 #### Seeds
 Skapa en ny databas-seed genom:
 ```bash
@@ -58,9 +62,11 @@ Kopiera sedan innehållet från [seeds-filen för produkter som du skapade i fö
 $this->call(MoviesTableSeeder::class);
 ```
 
+Utförliggare dokumentation finns under [seeding](https://laravel.com/docs/5.4/seeding) i Laravels dokumentation.
+
 ### 2.2. Skapa routes, controllers, models
 
-Mer information om routes och controllers för resurser i [Laravels dokumentation](https://laravel.com/docs/5.4/controllers#resource-controllers)
+Mer information om [routes](https://laravel.com/docs/5.4/routing), [controllers](https://laravel.com/docs/5.4/controllers) för [resurser](https://laravel.com/docs/5.4/controllers#resource-controllers) i Laravels dokumentation.
 
 #### 2.2.1. Skapa Routes
 **Notera att routes i Laravel skiljer sig något från Lumen**
@@ -114,6 +120,8 @@ php artisan make:model Product
 Notera att detta automatiskt ([genom ORM](https://laravel.com/docs/5.4/eloquent)) knyter modellen till tabellen `producs` i databasen. Vill ni använda ett annat tabellnamn så står det i [dokumentationen](https://laravel.com/docs/5.4/eloquent#eloquent-model-conventions) hur man gör detta.
 
 Så! Nu har vi skapat `routes`, `controller`, `model` för vår webbapplikation! Kvar är nu **logiken** och **vyerna**.
+
+Utförliggare dokumentation finns under [models](https://laravel.com/docs/5.4/eloquent#defining-models) i Laravels dokumentation.
 
 ### 3. Vyer och logik
 
