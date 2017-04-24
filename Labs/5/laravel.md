@@ -1,8 +1,8 @@
 # Labb 5, Laravel
 
-I denna labb ska vi titta närmre på Laravel och bygga vår första webbapplikation med ett GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att ni tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje del i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där ni förväntas att hitta svar på ev. frågor.
+I denna labb ska vi titta närmre på Laravel och bygga vår första webbapplikation med ett GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att du tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje del i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där du förväntas att hitta svar på ev. frågor.
 
-Laravel är _storebror_ till ramverket [Lumen](lumen.laravel.com) och således kommer ni att känna igen er mycket, speciellt från [föregående laboration](../4/lumen.md).
+Laravel är _storebror_ till ramverket [Lumen](lumen.laravel.com) och således kommer du att känna igen er mycket, speciellt från [föregående laboration](../4/lumen.md).
 
 Den kod som vi skrev till tillhörande föreläsning hittar nu här: [https://github.com/Tibbelit/da287a-laravel-movie-example](https://github.com/Tibbelit/da287a-laravel-movie-example).
 
@@ -14,7 +14,7 @@ composer global require "laravel/installer"
 ```
 
 ### 1.2. Skapa ett nytt Laravel-projekt
-Skapa ett nytt lumen-projekt som ni exempelvis kallar för `Lab5` genom:
+Skapa ett nytt lumen-projekt som du exempelvis kallar för `Lab5` genom:
 ```bash
 laravel new Lab5
 ```
@@ -30,16 +30,16 @@ Surfa sedan till [http://localhost:8080/](http://localhost:8080/) för att se at
 
 Utförliggare dokumentation finns under [installation](https://laravel.com/docs/5.4/installation) i Laravels dokumentation.
 
-*Om ni inte gjort föregående laboration kan ni behöva installera memcached. Instruktioner för detta hitta ni [här](../4/lumen.md#12-installera-memcached).*
+*Om du inte gjort föregående laboration kan du behöva installera memcached. Instruktioner för detta hitta ni [här](../4/lumen.md#12-installera-memcached).*
 
 ## 2. Labbuppgiften - Att bygga ett webb-GUI till våra produkter
 
 ### 2.1. Sätta upp databasen
 Vi kommer i denna labb att utgå från samma case (med *produkt* som resurs), men istället för att göra ett API (med `JSON`-svar) så ska vi göra en webbapplikation som returnerar en webbsida (genom HTML / CSS, och ev. JavaScript).
 
-**Vi kommer bara att hantera resursen `produkt` i denna laboration, så det räcker med att ni använder den migrationen för den tabellen, och seeds för den tabellen.**
+**Vi kommer bara att hantera resursen `produkt` i denna laboration, så det räcker med att du använder den migrationen för den tabellen, och seeds för den tabellen.**
 
-- Börja med att skapa en ny databas genom `phpMyAdmin` (som ni surfade till genom [http://localhost/phpmyadmin](http://localhost/phpmyadmin))
+- Börja med att skapa en ny databas genom `phpMyAdmin` (som du surfade till genom [http://localhost/phpmyadmin](http://localhost/phpmyadmin))
 - Konfigurera sedan er `.env`-fil med de korrekta uppgifterna till databasen (glöm inte att döpa om `.env.example` till `.env`)
 
 #### Migration
@@ -117,7 +117,7 @@ Vi ska nu även skapa vår modell av en produkt. Vi kan även här använda oss 
 ```bash
 php artisan make:model Product
 ```
-Notera att detta automatiskt ([genom ORM](https://laravel.com/docs/5.4/eloquent)) knyter modellen till tabellen `producs` i databasen. Vill ni använda ett annat tabellnamn så står det i [dokumentationen](https://laravel.com/docs/5.4/eloquent#eloquent-model-conventions) hur man gör detta.
+Notera att detta automatiskt ([genom ORM](https://laravel.com/docs/5.4/eloquent)) knyter modellen till tabellen `producs` i databasen. Vill du använda ett annat tabellnamn så står det i [dokumentationen](https://laravel.com/docs/5.4/eloquent#eloquent-model-conventions) hur man gör detta.
 
 Så! Nu har vi skapat `routes`, `controller`, `model` för vår webbapplikation! Kvar är nu **logiken** och **vyerna**.
 
@@ -142,7 +142,7 @@ Skapa sedan denna vy genom att skapa filen `index.blade.php` i mappen `resources
 <p>Nedan listas alla produkter upp</p>
 ```
 
-Surfa sedan till `localhost:8080/products` (eller den port som ni kör på) och se resultatet av din vy! För att bygga enkla och snygga gränssnitt så rekommenderar vi att ni använder ett CSS-ramver, t.ex. [Bootstrap](http://getbootstrap.com/). Där finns också [färdiga mallar](http://getbootstrap.com/getting-started/#template) att utgå från. Välj en som ni tycker passar - eller bygg er egen mall om ni är bekväma med det.
+Surfa sedan till `localhost:8080/products` (eller den port som du kör på) och se resultatet av din vy! För att bygga enkla och snygga gränssnitt så rekommenderar vi att du använder ett CSS-ramver, t.ex. [Bootstrap](http://getbootstrap.com/). Där finns också [färdiga mallar](http://getbootstrap.com/getting-started/#template) att utgå från. Välj en som du tycker passar - eller bygg er egen mall om du är bekväma med det.
 
 #### 3.2. Logik
 För att skicka med data till vyerna så kan man skicka med en array som andra argument. Då anger man i arrayen en nyckel (variabelns namn som sedan kan användas i vyn) och värdet för variabeln. Nedan finns ett exempel att utgå från för att skicka med en lista på alla produkter till vår vy:
@@ -163,7 +163,7 @@ Vi kan sedan skriva ut alla produkter i vår template genom `foreach`-loop i vå
 ```
 
 ### 4. Bygg klart er applikation
-Ni ska nu bygga klart er webbapplikation, genom att komplettera de routes som ni skapat (ni kan se era routes genom `php artisan route:list`):
+Vi ska nu bygga klart er webbapplikation, genom att komplettera de routes som vi skapat (du kan se era routes genom `php artisan route:list`):
 ```bash
 +--------+-----------+-------------------------+------------------+------------------------------------------------+--------------+
 | Domain | Method    | URI                     | Name             | Action                                         | Middleware   |
@@ -193,6 +193,6 @@ Alltså vyer för att:
 - products/{id}/edit (GET)
     - [Vy] Redigera en produkt
 
-Behöver ni inspiration, så titta gärna på det exempel som vi byggde på förra föreläsningen som även finns här: [https://github.com/Tibbelit/da287a-laravel-movie-example](https://github.com/Tibbelit/da287a-laravel-movie-example)
+Behöver du inspiration, så titta gärna på det exempel som vi byggde på förra föreläsningen som även finns här: [https://github.com/Tibbelit/da287a-laravel-movie-example](https://github.com/Tibbelit/da287a-laravel-movie-example)
 
-Har ni frågor på dessa punkterna så fråga gärna labbhandledaren!
+Har du frågor på dessa punkterna så fråga gärna labbhandledaren!
