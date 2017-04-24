@@ -7,3 +7,4 @@ Nedan hittar ni en lista på föreläsningar och ev. exempel på föreläsningar
 3. JH - [Versionshantering med Git och GitFlow, samt webbtjänster med HTTP och REST](versionshantering_rest.pdf)
 4. AT - [PHP - Lumen](4/lecture.md)
 5. AT - [PHP - Lumen/Controllers/Models/Database/etc.](5/lecture.md)
+6. AT - [PHP - Introduktion till Laravel](6/lecture.md)
