@@ -192,7 +192,6 @@ Alltså vyer för att:
     - Radera en produkt
 - products/{id}/edit (GET)
     - [Vy] Redigera en produkt
-```
 
 Behöver ni inspiration, så titta gärna på det exempel som vi byggde på förra föreläsningen som även finns här: [https://github.com/Tibbelit/da287a-laravel-movie-example](https://github.com/Tibbelit/da287a-laravel-movie-example)
 
