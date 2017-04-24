@@ -8,6 +8,7 @@ På denna sida kan ni hitta information som är kopplat till kursen DA287A - Web
 3. [Versionshantering med Git och GitFlow, samt webbtjänster med HTTP och REST](/Lectures/3/lecture.md)
 4. [PHP - Lumen](/Lectures/4/lecture.md)
 5. [PHP - Lumen/Controllers/Models/Database/etc.](/Lectures/5/lecture.md)
+6. [PHP - Introduktion till Laravel](/Lectures/6/lecture.md)
 
 ## Laborationer
 - [Laboration 1](/Labs/1/IntroPHP.md)
