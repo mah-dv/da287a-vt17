@@ -15,6 +15,7 @@ På denna sida kan ni hitta information som är kopplat till kursen DA287A - Web
 - [Laboration 2](/Labs/2/git.md)
 - [Laboration 3](/Labs/3/lumen.md)
 - [Laboration 4](/Labs/4/lumen.md)
+- [Laboration 5](/Labs/5/laravel.md)
 
 ## Inlämningsuppgifter
 - [Inlämning 1](/Assignments/1/assignment.md)
