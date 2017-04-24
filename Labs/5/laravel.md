@@ -1,6 +1,6 @@
 # Labb 5, Laravel
 
-I denna labb ska vi titta närmre på Laravel och bygga vår första webbapplikation med ett GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att ni tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje del i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där ni förväntas att hitta svar på ev. frågor.
+I denna labb ska vi titta närmre på Laravel och bygga vår första webbapplikation med ett GUI. Laborationen kommer vara uppbyggd stegvis och kommer kräva att ni tittar nämre och lär er att hitta i [Laravels dokumentation](https://laravel.com/docs/5.4). Tacksamt nog är Laravel ett väldokumenterat ramverk med både tydliga förklaring och mycket kodexempel. Så vid varje del i laboration så kommer det att refereras till olika delar av Laravels dokumentation, där ni förväntas att hitta svar på eventuella frågor.
 
 Laravel är _storebror_ till ramverket [Lumen](lumen.laravel.com) och således kommer ni att känna igen er mycket, speciellt från [föregående laboration](../4/lumen.md).
 
@@ -14,7 +14,7 @@ composer global require "laravel/installer"
 ```
 
 ### 1.2. Skapa ett nytt Laravel-projekt
-Skapa ett nytt lumen-projekt som ni exempelvis kallar för `Lab5` genom:
+Skapa ett nytt Laravel-projekt som ni exempelvis kallar för `Lab5` genom:
 ```bash
 laravel new Lab5
 ```
@@ -35,7 +35,7 @@ Utförliggare dokumentation finns under [installation](https://laravel.com/docs/
 ## 2. Labbuppgiften - Att bygga ett webb-GUI till våra produkter
 
 ### 2.1. Sätta upp databasen
-Vi kommer i denna labb att utgå från samma case (med *produkt* som resurs), men istället för att göra ett API (med `JSON`-svar) så ska vi göra en webbapplikation som returnerar en webbsida (genom HTML / CSS, och ev. JavaScript).
+Vi kommer i denna labb att utgå från samma case (med *product* som resurs), men istället för att göra ett API (med `JSON`-svar) så ska vi göra en webbapplikation som returnerar en webbsida (genom HTML / CSS, och ev. JavaScript).
 
 **Vi kommer bara att hantera resursen `produkt` i denna laboration, så det räcker med att ni använder den migrationen för den tabellen, och seeds för den tabellen.**
 
@@ -44,7 +44,7 @@ Vi kommer i denna labb att utgå från samma case (med *produkt* som resurs), me
 
 #### Migration
 
-Utgå från [migrations-filen för produkter som du skapde i förra laborationen](../4/lumen.md#212-skapa-migrations) och kopiera den (som ligger i mappen `database/migrations`) från lumen-projekt till ditt nyskapade Laravel-projekt. Som du kanske ser finns det redan `migrations`-filer i ditt Laravel-projekt (som förbereder användharntering och login), som du kan ta bort, då vårt projekt ej kommer att använda sig utav inloggning. Kör sedan:
+Utgå från [migrations-filen för produkter som du skapde i förra laborationen](../4/lumen.md#212-skapa-migrations) och kopiera den (som ligger i mappen `database/migrations`) från Lumen-projektet till ditt nyskapade Laravel-projekt. Som du kanske ser finns det redan `migrations`-filer i ditt Laravel-projekt (som förbereder användharntering och login), som du kan ta bort, då vårt projekt ej kommer att använda sig utav inloggning. Kör sedan:
 ```bash
 php artisan migrate
 ```
@@ -81,7 +81,7 @@ $app->get("/", ...);
 Route::get("/", ...);
 ```
 
-Vi ska nu skapa de `routes` som vår webbapplikation ska innehålla. Vi vill ha routes för följande URL:r:
+Vi ska nu skapa de `routes` som vår webbapplikation ska innehålla. Vi vill ha routes för följande URLer:
 - products (GET)
     - [Vy] Lista upp alla produkter
 - products (POST)
@@ -99,7 +99,7 @@ Vi ska nu skapa de `routes` som vår webbapplikation ska innehålla. Vi vill ha 
 
 **[Vy]** ovan innebär att en webbsida returneras.
 
-Vi kan antingen skapa dessa vyer manuellt - eller så kan vi låta Laravel göra detta för oss! Detta genom att skriva följande i vår `routes/web.php`:
+Vi kan antingen skapa dessa vyer manuellt - eller så kan vi låta Laravel göra detta för oss! Detta gör du genom att skriva följande i vår `routes/web.php`:
 ```php
 Route::resource('/producs', 'ProductController');
 ```
@@ -128,7 +128,7 @@ Utförliggare dokumentation finns under [models](https://laravel.com/docs/5.4/el
 #### 3.1. Vyer
 För att läsa om hur hur man arbetar med templates i Laravel, se [dokumentation för templates](https://laravel.com/docs/5.4/blade). En god idé kan sedan vara att dela upp sin template i olika delar, så att vi kan återanvända t.ex. sidhuvud och sidfot i de olika webbsidorna som vår tjänst erbjuder.
 
-För att komma igång med vyer så börjar med att gå in i `ProductController` och i funktionen `index` returnera vyn `index` enligt:
+För att komma igång med vyer så börjar du med att gå in i `ProductController` och i funktionen `index` returnera vyn `index` enligt:
 ```php
 public function index()
 {
