@@ -9,6 +9,7 @@ På denna sida kan ni hitta information som är kopplat till kursen DA287A - Web
 4. [PHP - Lumen](/Lectures/4/lecture.md)
 5. [PHP - Lumen/Controllers/Models/Database/etc.](/Lectures/5/lecture.md)
 6. [PHP - Introduktion till Laravel](/Lectures/6/lecture.md)
+7. [PHP - Laravel, middleware/authentication](Lectures/7/lecture.md)
 
 ## Laborationer
 - [Laboration 1](/Labs/1/IntroPHP.md)

@@ -8,3 +8,4 @@ Nedan hittar ni en lista på föreläsningar och ev. exempel på föreläsningar
 4. AT - [PHP - Lumen](4/lecture.md)
 5. AT - [PHP - Lumen/Controllers/Models/Database/etc.](5/lecture.md)
 6. AT - [PHP - Introduktion till Laravel](6/lecture.md)
+7. AT - [PHP - Laravel, middleware/authentication](7/lecture.md)
