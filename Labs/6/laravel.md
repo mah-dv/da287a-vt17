@@ -36,7 +36,7 @@ php artisan db:seed
 ### 3.1. Skapa förutsättningar för login
 Använd [Laravels auth-genrerare](https://laravel.com/docs/5.4/authentication#introduction) för att skapa grunderna för er inloggning (model/controller/middleware/views/etc.):
 ```bash
-php artisan migrate
+php artisan make:auth
 ```
 Dubbelkolla sedan så att allt fungerar som det ska genom att starta en webbserver i `public`-mappen för adressen `localhost:8000`:
 ```bash
@@ -64,7 +64,7 @@ Skapa följande routes:
 
 De routes som är **fetstilta** ska endast gå att nå om man är inloggad. Tips är att läsa [Laravels dokumentation om middleware](https://laravel.com/docs/5.4/routing#route-groups).
 
-Bygg sedan klart er webbapplikation! =)
+Bygg sedan klart er webbapplikation! =) (Återigen, ni har troligvis byggt vyerna ovan redan i [Labb 5](../5/laravel.md), så utgå från dem).
 
 ## 4. Nu då?
 Det är fritt fram att bygga vidare på sin applikation, vill ni ha inspiration för att komma vidare så prata gärna med någon av handledarna.
