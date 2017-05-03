@@ -19,3 +19,7 @@ Labben hittar ni här:
 ## Laboration 5 - Introduktion till Laravel
 Labben hittar ni här:
 [Laravel](5/laravel.md)
+
+## Laboration 6 - Laravel - middleware / authentication
+Labben hittar ni här:
+[Laravel](6/laravel.md)
