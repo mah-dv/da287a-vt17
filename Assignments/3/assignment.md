@@ -33,7 +33,7 @@ Följande krav finns på uppgiften:
 - Ni ska använda er utav `models` för att mappar era resurser mot databaser (ORM)
 - Ni ska använda er utav `views` för att bygga ert grafiska gränssnitt
 - Ni ska använda er utav `authentication` för att skydda vissa vyer (skapa/redigera/radera resurs)
-- Ni ska följa PSR-1 & PSR-2 när det gällen hur ni skriver er kod
+- Ni ska följa PSR-1 & PSR-2 när det gäller hur ni skriver er kod
 
 ## Inlämning & deadline
 Inlämningen sker genom att ni publicerar er lösning på Github och skickar in adressen till er lösning på Its learning. Glöm inte att uppgiften ska utföras och redovisas enskilt.
