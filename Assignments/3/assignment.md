@@ -4,7 +4,7 @@ Den tredje inlämningsuppgiften handlar om att bygga en webbapplikation med **La
 
 ## Uppgiften
 
-Denna uppgift är mycket mer öppen än tidigare uppgifter, vilket innebär att ni sjävla får bestämma innehållet i er webbapplikation. Det är helt okej att återanvända det ny byggt på laborationerna och bygga en webbapplikation med resurserna `produkt`, `review` och `store` om man vill det, men det är även välkommet med egna idéer. Följande krav kommer finnas på inlämningsuppgiften.
+Denna uppgift är mycket mer öppen än tidigare uppgifter, vilket innebär att ni sjävla får bestämma innehållet i er webbapplikation. Det är helt okej att återanvända det ny byggt på laborationerna och bygga en webbapplikation med resurserna `produkt`, `review` och `store` om man vill det, men det är även välkommet med egna idéer. Följande ska finnas finnas i inlämningsuppgiften.
 
 1. Ni ska använda `GitFlow` i er utvecklingsprocess på ett **korrekt** sätt, se [Lab 2](../../Labs/2/git.md)
 2. Ni ska använda er av minst tre resurser (vilket ska resultera i minst tre `models`)
@@ -16,7 +16,7 @@ Denna uppgift är mycket mer öppen än tidigare uppgifter, vilket innebär att 
     - Skapa en ny resurs (t.ex. en ny produkt)
     - Redigera en resurs (t.ex. en produkt)
     - Radera en resurs (t.ex. radera en produkt)
-    De fetstilta vyerna kräven **inte inloggning**
+    - _De fetstilta vyerna kräven **inte inloggning**_
 5. Ni ska även ha en startsida som visar en översikt av webbplatsens syfte och resurser.
 
 I övrigt är uppgiften väldigt öppen, men fokus ska ligga på ett **enkelt och tydligt användargränssnitt**. Använd gärna [Bootstrap](http://getbootstrap.com/) för detta.
