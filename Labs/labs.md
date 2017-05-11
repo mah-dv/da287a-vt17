@@ -23,3 +23,7 @@ Labben hittar ni här:
 ## Laboration 6 - Laravel - middleware / authentication
 Labben hittar ni här:
 [Laravel](6/laravel.md)
+
+## Laboration 7 - Tester och refaktorisering
+Labben hittar ni här:
+[Tester och refaktorisering](7/tester_och_refaktorisering.md)
