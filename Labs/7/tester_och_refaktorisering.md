@@ -13,7 +13,7 @@ Curl är ett bibliotek som används för att anropa HTTP-servrar. Det används a
 Öppna en terminal och skriv in
 
 ```bash
-$ sudo apt-get php-curl
+$ sudo apt-get install php-curl
 ```
 
 ## Upplägg på labben
