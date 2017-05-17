@@ -1,6 +1,6 @@
 # Labb 7, Tester och refaktorisering
 
-I denna labb ska vi titta på närmare på hur vi kan testa PHP-kod och refaktorisera den samma.
+I denna labb ska vi titta närmare på hur vi kan testa PHP-kod och refaktorisera den samma.
 
 Vi kommer att utgå från ett existerande Composerprojekt (Johans förolämpningstjänst) och skriva tester för det. Vi kommer också att refaktorisera koden.
 
