@@ -27,6 +27,7 @@ På denna sida kan ni hitta information som är kopplat till kursen DA287A - Web
 - [Inlämning 1](/Assignments/1/assignment.md)
 - [Inlämning 2](/Assignments/2/assignment.md)
 - [Inlämning 3](/Assignments/3/assignment.md)
+- [Inlämning 4](/Assignments/4/assignment.md)
 
 ## Resurser
 - [Installation av kurserns verktyg](/Resources/vm_installation.md)
