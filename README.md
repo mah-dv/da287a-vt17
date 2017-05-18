@@ -21,6 +21,7 @@ På denna sida kan ni hitta information som är kopplat till kursen DA287A - Web
 - [Laboration 5](/Labs/5/laravel.md)
 - [Laboration 6](/Labs/6/laravel.md)
 - [Laboration 7](/Labs/7/tester_och_refaktorisering.md)
+- [Laboration 8](/Labs/8/ddi.md)
 
 ## Inlämningsuppgifter
 - [Inlämning 1](/Assignments/1/assignment.md)
