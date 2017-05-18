@@ -185,7 +185,7 @@ Vi vill skapa två miljövaribler: `DEPLOY_HOST`, som pekar på vår virtuella m
 
 Travis CI styrs av ett gäng direktiv, inte helt olikt hur vi berättar för Composer hur den ska hantera vårt PHP-projekt. För att detta ska fungera behöver vi skapa en fil som heter *.travis.yml*. Notera punkten i början av filen. Den är där för att, precis som vår gamla kompis *.gitignore* berätta för operativsystemet att det här är en speciell fil som för det mesta inte behöver synas för användaren, i det här fallet PHP-utvecklaren.
 
-Stå kvar i din projektkatalog och skapa en tom fil genom att skriva
+Stå kvar i din projektkatalog (om du inte gjorde steg 2: gå till din projektkatalog) och skapa en tom fil genom att skriva
 
 ```bash
 $ nano .travis.yml
@@ -316,5 +316,9 @@ $ rm -f deploy_rsa deploy_rsa.pub
 ## 5. Kontrollera att allt fungerar
 
 Pusha dina förändringar till GitHub. Gå sedan in på [Travis CI](https://travis-ci.org/) och titta på ditt projekt. Bygger det som det ska? Det borde det göra. När det är färdigt, gå in på din nya tjänst (exempelvis [insultr.westeurope.cloudapp.azure.com](http://insultr.westeurope.cloudapp.azure.com)) och kontrollera att det fungerar även där.
+
+Nedan syns en statusskärm på Travis CI med två projekt igång. Det översta, *koddas/insultr*, har inte lyckats byggas. Det undre, som också syns på huvudskärmen, har lyckats och är därför grönt.
+
+![Statusskärm på Travis CI](bilder/14.png)
 
 Nu har du skapat en virtuell maskin, satt upp en toolchain för CI/CD och borde vara nöjd med dig själv. Wohoo!
